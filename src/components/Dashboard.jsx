@@ -4,6 +4,10 @@ function Dashboard() {
     const location = useLocation();
     const { name, email, username, age } = location.state || {};
 
+    if (!location.state || !name || !email || !username || !age) {
+        return <div>Error receiving data</div>;
+    }
+
   return (
     <div>
         <h1>{name}</h1>
